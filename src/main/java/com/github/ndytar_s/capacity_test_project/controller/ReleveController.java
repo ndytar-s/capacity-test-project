@@ -16,7 +16,7 @@ public class ReleveController {
     }
 
     @GetMapping("/exporter/{id}")
-    @RequiresCapacity(actions = {"EXPORT"})
+    @RequiresCapacity(actions = "EXPORT")
     public String exporterReleve(@PathVariable String id) {
         return "Relevé exporté : " + id;
     }

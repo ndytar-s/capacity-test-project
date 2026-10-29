@@ -21,7 +21,7 @@ public class RapportController {
     }
 
     @GetMapping("/exporter")
-    @RequiresCapacity(actions = {"EXPORT"})
+    @RequiresCapacity(actions = "EXPORT")
     @OneTimeAccess
     public String exporter() {
         return "Rapport exporté";

@@ -19,7 +19,10 @@ public class SecurityConfig {
         http.with(capacitySecurity(), Customizer.withDefaults())
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers("/admin/**").permitAll()
+                        .requestMatchers("/dev/dpop/**").permitAll()
+                        .requestMatchers("/agent/**").permitAll()
                         .requestMatchers("/auth/**").permitAll()
+                        .requestMatchers("/loginByProof/**").permitAll()
                         .anyRequest().access(capacity));
 
         return http.build();

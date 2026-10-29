@@ -5,11 +5,12 @@ import com.github.ndytar.capacity.services.ExternalOauthVerifier;
 import org.springframework.stereotype.Component;
 
 @Component
-public class GoogleVerify implements ExternalOauthVerifier {
+public class OauthLogin implements ExternalOauthVerifier {
     @Override
     public OauthUserInfo verify(String rawToken) {
-        // Code du dev : Appel API Google, décodage, etc.
-        // Le probleme: comment extraire user info depauis le token tiers sans clé secrete?
+        /**
+         * Extraire les infons avec les outils natifs de spring boot
+         */
         return new OauthUserInfo("google-id-123", "manager");
     }
 }

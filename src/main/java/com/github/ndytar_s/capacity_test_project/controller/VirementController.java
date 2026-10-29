@@ -13,7 +13,7 @@ public class VirementController {
     }
 
     @PostMapping("/approuver/{id}")
-    @RequiresCapacity(actions = {"APPROVE"})
+    @RequiresCapacity(actions = "APPROVE")
     public String approuver(@PathVariable String id) {
         return "Virement approuvé : " + id;
     }

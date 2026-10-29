@@ -28,14 +28,45 @@
 	</scm>
 	<properties>
 		<java.version>17</java.version>
+		<nimbus.version>10.0.2</nimbus.version>
+		<tink.version>1.23.0</tink.version>
 	</properties>
 	<repositories>
+<!--		<repository>-->
+<!--			<id>capacity-security-repo</id>-->
+<!--			<url>https://raw.githubusercontent.com/ndytar-s/capacity-security-spring-starter/master/maven-repo</url>-->
+<!--		</repository>-->
+
 		<repository>
-			<id>capacity-security-repo</id>
-			<url>https://raw.githubusercontent.com/ndytar-s/capacity-security-spring-starter/master/maven-repo</url>
+			<id>jitpack.io</id>
+			<url>https://jitpack.io</url>
 		</repository>
 	</repositories>
+
+
 	<dependencies>
+		<dependency>
+			<groupId>com.github.ndytar-s.capacity-security-spring-starter</groupId>
+			<artifactId>capacity-security-spring-boot-starter</artifactId>
+			<version>v1.0.8</version>
+		</dependency>
+<!--		<dependency>-->
+<!--			<groupId>com.github.ndytar</groupId>-->
+<!--			<artifactId>capacity-security-spring-boot-starter</artifactId>-->
+<!--			<version>v1.0.4</version>-->
+<!--		</dependency>-->
+
+<!--		<dependency>-->
+<!--			<groupId>com.nimbusds</groupId>-->
+<!--			<artifactId>nimbus-jose-jwt</artifactId>-->
+<!--			<version>${nimbus.version}</version>-->
+
+<!--		</dependency>-->
+<!--		<dependency>-->
+<!--			<groupId>com.google.crypto.tink</groupId>-->
+<!--			<artifactId>tink</artifactId>-->
+<!--			<version>${tink.version}</version>-->
+<!--		</dependency>-->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter</artifactId>
@@ -55,11 +86,8 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
-	<dependency>
-		<groupId>com.github.ndytar</groupId>
-		<artifactId>capacity-security-spring-boot-starter</artifactId>
-		<version>v1.0.1</version>
-	</dependency>
+
+
 		<!-- Starter pour la persistance des données -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -82,12 +110,28 @@
 <!--			<artifactId>mysql-connector-j</artifactId>-->
 <!--			<scope>runtime</scope>-->
 <!--		</dependency>-->
+
+<!--		<dependency>-->
+<!--			<groupId>org.springframework.boot</groupId>-->
+<!--			<artifactId>spring-boot-starter-data-redis</artifactId>-->
+<!--		</dependency>-->
+
 		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-data-redis</artifactId>
+			<groupId>org.springframework.ai</groupId>
+			<artifactId>spring-ai-starter-model-openai</artifactId>
 		</dependency>
 	</dependencies>
-
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.springframework.ai</groupId>
+				<artifactId>spring-ai-bom</artifactId>
+				<version>2.0.0</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
 	<build>
 		<plugins>
 			<plugin>

@@ -6,5 +6,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.List;
 
 public interface PolitiqueRepository extends JpaRepository<MapingPolitic, Long> {
-    List<MapingPolitic> findByRole(String role);
+   List<MapingPolitic> findByRole(String role);
 }

@@ -24,13 +24,13 @@ public class DocumentController {
     }
 
     @PostMapping("/approuver")
-    @RequiresCapacity(actions = {"APPROVE"})  // action métier explicite
+    @RequiresCapacity(actions = "APPROVE")  // action métier explicite
     public String approuver() {
         return "document approuvé";
     }
 
-    @GetMapping("/export")
-    @RequiresCapacity(actions = {"EXPORT"})
+    @GetMapping("/exporter")
+    @RequiresCapacity( actions = "EXPORT", resourcePattern = "")
     @OneTimeAccess
     public String exporter() {
         return "document exporté";

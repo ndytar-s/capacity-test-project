@@ -20,7 +20,8 @@ public class UserService implements CapacityUserService {
                 .map(u -> new CapacityUser(
                         u.getUsername(),
                         u.getPassword(),
-                        u.getRole()
+                        u.getRole(),
+                        u.getId()
                 ));
     }
 }
